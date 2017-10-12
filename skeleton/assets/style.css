@@ -1,0 +1,44 @@
+body {
+  font-family: "Arial, sans-serif";
+  background-color: khaki;
+ }
+
+ h1 {
+   font-size: 38px;
+ }
+
+ h2 {
+   font-size: 32px;
+ }
+
+ .ingredients-list{
+   list-style: square inside;
+ }
+
+ol{
+   list-style: upper-roman;
+   padding: 30px
+ }
+
+header > img {
+  width: 100px
+}
+
+ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.user_review {
+  padding: 20px;
+  margin: 30px;
+  font-family: tahoma, sans-serif;
+  border: 1px solid black;
+
+}
+
+.user_review h4 {
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: underline;
+}
