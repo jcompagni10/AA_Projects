@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+
+def get_email
+  puts "Input email"
+  gets.chomp
+end
+
+def find_user(email)
+  User.find_by_email(email)
+end
+
+def choose_action(user)
+  puts "What do you want to do?"
+  puts "1. Create a shortned url"
+  puts "2. Visit a shortned url"
+  case gets.chomp
+  when "1"
+    create_link(user)
+  when "2"
+    visit_link(user)
+  end
+end
+
+def visit_link(user)
+  puts "Enter link: "
+  short_url = gets.chomp
+  short_url = ShortenedUrl.find_by_short_url(short_url)
+  #puts "Full url: #{short_url.long_url}"
+  Visit.record_visit!(user, short_url)
+  Launchy.open(short_url.long_url)
+end
+
+def create_link(user)
+  puts "Enter a website: "
+  website = gets.chomp
+  short_url = ShortenedUrl.make_short_url(user, website)
+  if short_url.valid?
+    puts "Your short url is #{short_url.short_url}"
+  else
+    puts "ERROR: #{short_url.errors.full_messages}"
+  end
+end
+
+
+8.times do
+  create_link(User.last)
+end
+
+email = get_email
+
+user = find_user(email)
+
+choose_action(user)
+
+puts "Bye bye"
