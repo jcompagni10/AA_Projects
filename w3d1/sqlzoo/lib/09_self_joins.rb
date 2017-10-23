@@ -218,26 +218,46 @@ def craiglockhart_to_sighthill
   # Sighthill. Show the bus no. and company for the first bus, the name of the
   # stop for the transfer, and the bus no. and company for the second bus.
   execute(<<-SQL)
-  SELECT
-    a.stop_id as a_stop,
-    b.stop_id as b_stop,
-    a.num as a_route,
-    a.company as a_company,
-    stops.name,
-    b.num as b_route,
-    b.company as b_company
-  FROM
-    (SELECT * FROM routes WHERE num IN ('4', '10', '27', '45', '47')) AS a
-  JOIN
-    (SELECT * FROM routes WHERE num IN
-    ('3','3A','22','22A','25','27','30','32','34','34','35','35','52','61','61','65','C5','C70','D25','D26','D27','D28')) AS b
-  ON (a.stop_id = b.stop_id)
-  JOIN
-    stops
-  ON
-    b.stop_id = stops.id
+  -- SELECT
+  --   a.num as a_route,
+  --   a.company as a_company,
+  --   stops.name,
+  --   b.num as b_route,
+  --   b.company as b_company
+  -- FROM
+  --   (SELECT * FROM routes WHERE num IN ('4', '10', '27', '45', '47')) AS a
+  -- JOIN
+  --   (SELECT * FROM routes WHERE num IN
+  --   ('3','3A','22','22A','25','27','30','32','34','34','35','35','52','61','61','65','C5','C70','D25','D26','D27','D28')) AS b
+  -- ON (a.stop_id = b.stop_id)
+  -- JOIN
+  --   stops
+  -- ON
+  --   b.stop_id = stops.id
   -- WHERE
   --   a.stop_id in (select stop_id from routes where num in ('3','3A','22','22A','25','27','30','32','34','34','35','35','52','61','61','65','C5','C70','D25','D26','D27','D28'))
+  --   AND stops.id != 53 AND a.num
+
+  SELECT
+    .stop_id,
+    b.stop_id,
+    a.num
+  FROM
+    routes AS b_start
+  JOIN
+    routes AS b_end ON (b_start.company = b_end.company AND a.num = b.num)
+  WHERE
+    b.end = 213 AND b_start in (
+    SELECT
+      transfer.stop_id
+    FROM
+      routes AS a_start
+    JOIN
+      routes AS a_end ON (a_start.company = a_end.company AND a_start.num = b_start.num)
+    WHERE
+      a_start.stop_id = 53
+  )
+
 
 
 
