@@ -1,0 +1,22 @@
+<h1>Name: <%= @cat.name %></h1>
+
+<li>Age: <%= @cat.age %></li>
+<li>Color: <%= @cat.color %></li>
+<li>Sex: <%= @cat.sex %></li>
+<li>Description: <%= @cat.description %></li>
+
+
+<h2> Bookings </h2>
+
+<% @cat.cat_rental_requests.order(:start_date).each_with_index do |rental, idx| %>
+  <%= idx + 1 %>.)<br>
+  <b>Start date:</b> <%= rental.start_date %> <br>
+  <b>End date:</b> <%= rental.end_date %><br>
+  <b>Status:</b> <%= rental.status %><br>
+  <br>
+  <% if rental.pending? %>
+    <%= button_to "APPROVE", approve_url(rental), {method: :get} %>
+    <%= button_to "DENY", deny_url(rental), {method: :get} %>
+  <% end %>
+  <hr>
+<% end %>
