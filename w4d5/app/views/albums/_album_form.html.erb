@@ -1,0 +1,41 @@
+<% if type == :create %>
+  <% action = albums_url %>
+<% else %>
+  <% action = album_url(album) %>
+<% end %>
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li> <%= error %> </li>
+    <% end %>
+  </ul>
+<% end %>
+<form class="form" action="<%=action%>" method="post">
+  <%= authenticity_token %>
+  <% if type == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <%= authenticity_token %>
+  <label>Album Title:</label>
+  <input type="text" name="album[title]" " value="<%= album.title %>">
+  <label>Album Year:</label>
+  <input type="number" name="album[yr]"  value="<%= album.yr %>">
+  <label>Band:</label>
+  <select type="text" name="album[band_id]" >
+    <option <%= "selected" if type == :create %> disabled>-Select Band - </option>
+    <% all_bands.each do |band| %>
+      <option value="<%=band.id%>" <%= "selected" if @album.band == band.id %>>
+        <%=band.name%></option>
+      </option>
+    <% end %>
+  </select>
+  <section class="radio-buttons">
+    <label>Live:</label>
+    <input type="radio" name="album[is_live]" value="true" <%= "checked" if @album.is_live  %> >
+    <label>Studio:</label>
+    <input type="radio" name="album[is_live]" value="false" <%= "checked" if !@album.is_live  %> >
+  </section>
+  <% submit_text = (type == :create) ? 'Create Album' : 'Edit Album' %>
+  <input type="submit" value="<%=submit_text%>">
+</form>

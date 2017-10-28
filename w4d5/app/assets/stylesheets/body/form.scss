@@ -1,0 +1,43 @@
+.form-container{
+  background-color: #ccc;
+  margin: 0 auto;
+  width: 50%;
+  padding: 20px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 2px 2px 15px 1px rgba(50, 50, 50, .5)
+
+}
+.form{
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+}
+
+
+.form-container .title{
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+}
+
+input{
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid $purple;
+  padding: 5px 20px;
+  font-size: 14px;
+}
+
+.radio-buttons{
+  margin: 10px 0;
+}
+
+label{
+  margin-left: 10px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}

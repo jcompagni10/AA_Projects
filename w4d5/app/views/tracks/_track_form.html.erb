@@ -1,0 +1,43 @@
+<% if type == :create %>
+  <% action = tracks_url %>
+<% else %>
+  <% action = track_url(track) %>
+<% end %>
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li> <%= error %> </li>
+    <% end %>
+  </ul>
+<% end %>
+<form class="form" action="<%=action%>" method="post">
+  <%= authenticity_token %>
+  <% if type == :edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <%= authenticity_token %>
+  <label>Track Title:</label>
+  <input type="text" name="track[title]" " value="<%= track.title %>">
+  <label>Album:</label>
+  <select type="text" name="track[album_id]">
+    <option <%= "selected" if type == :create %> disabled> -Select Album- </option>
+    <% all_albums.each do |album| %>
+      <option value="<%=album.id%>" <%= "selected" if @track.album == album.id %>>
+        <%=album.title%></option>
+      </option>
+    <% end %>
+  </select>
+  <label>Track #:</label>
+  <input type="number" name="track[ord]" value="<%= @track.ord %>">
+  <section class="radio-buttons">
+    <label>Regular:</label>
+    <input type="radio" name="track[is_regular]" value="true" <%= "checked" if @track.is_regular  %> >
+    <label>Bonus:</label>
+    <input type="radio" name="track[is_regular]" value="false" <%= "checked" if !@track.is_regular  %> >
+  </section>
+  <label>Lyrics: (optional) </label>
+  <textarea name="track[lyrics]" rows="8" cols="80"><%= @track.lyrics %></textarea>
+  <% submit_text = (type == :create) ? 'Create Track' : 'Edit Track' %>
+  <input type="submit" value="<%=submit_text%>">
+</form>

@@ -1,0 +1,12 @@
+<section class="band_page">
+  <h1> <%= @band.name %> </h1>
+  <section class="data">
+    <h2> Albums </h2>
+      <ul>
+      <%@band.albums.each do |album| %>
+        <li> <%= link_to album.title, album_url(album) %> </li>
+      <% end %>
+  </section>
+  <%= button_to "Edit", edit_band_url(@band), method: :get, class: "option-button" %>
+  <%= button_to "Delete Band", band_url(@band), method: :delete, class: "option-button" %>
+</section>

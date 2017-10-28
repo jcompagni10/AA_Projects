@@ -1,0 +1,14 @@
+<section class="info-page">
+  <section class="data">
+    <h1> <%= @track.title %> </h1>
+    <strong>band:</strong> <%= link_to @track.band_name, band_url(@track.band) %> <br>
+    <strong>Album:</strong> <%= link_to @track.album_title, album_url(@track.album) %><br>
+    <strong>track #:</strong> <%= @track.ord %><br>
+    <strong>bonus track:</strong> <%= !@track.is_regular %><br>
+    <strong>lyrics:</strong> <%= @track.lyrics %><br>
+  </section>
+  <section class="buttons">
+    <%= button_to "Edit Track", edit_track_url(@track), method: :get, class: "option-button" %>
+    <%= button_to "Delete Track", track_url(@track), method: :delete, class: "option-button" %>
+  </section>
+</section>
