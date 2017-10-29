@@ -1,0 +1,26 @@
+
+<section class=masthead>
+  <section class="language-nav hidden-small">
+    <ul>
+      <li><a>CSS</a></li>
+      <li><a>HTML</a></li>
+      <li><a>Javascript</a></li>
+      <li><a>Ruby</a></li>
+      <li><a>CSS</a></li>
+    </ul>
+  </section>
+<img class="logo" src="assets/AA_Times_Logo.png"/>
+  <ul class="masthead-links">
+  <% links = ['Tuesday, October 18 2016',
+              "<i class='fa fa-newspaper-o'></i><span class='underline-hover'>Today’s Paper</span>",
+              "<i class='fa fa-video-camera'></i><span class='underline-hover'>Video</span>",
+              "<span class='grey-hover'>77°F</span>",
+              "<span class='grey-hover'><strong>AAO</strong> +100%</span>"]
+  %>
+  <% links.each do |link| %>
+    <li>
+      <button><%= link.html_safe%></button>
+    </li>
+  <% end %>
+  </ul>
+</section>

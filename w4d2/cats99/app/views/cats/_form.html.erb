@@ -1,0 +1,27 @@
+<form action="<%= action %>" method="post">
+  <% if edit %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <label for="name">Name:</label>
+  <input id= "name" type="text" name="cat[name]" value= <%= cat.name %> >
+  <br><br>
+  <label for="sex_m">Male</label>
+  <input id ="sex_m" <%= cat.gender?("M") %> type="radio" name="cat[sex]" value="M">
+  <label for="sex_f">Female</label>
+  <input id = "sex_f" <%= cat.gender?("F") %> type="radio" name="cat[sex]" value="F">
+  <br><br>
+  <label for="color">Color:</label>
+  <select  id ="color" name="cat[color]">
+    <option disabled <%= "selected" unless edit %> >-Pick a Color-</option>
+    <% Cat.COLORS.each do |color| %>
+      <option <%= cat.color?(color) %> value=<%= color %> ><%= color %></option>
+    <% end %>
+  </select>
+  <label for="bday">Birth Date:</label>
+  <input type="date" name="cat[birth_date]" value=<%= cat.birth_date %>>
+  <br><br>
+  <label for="descirption">Description:</label><br>
+  <textarea name="cat[description]" rows="8" cols="80"> <%= cat.description %> </textarea>
+  <% button_name = (edit) ? "Edit Cat" : "New Cat" %><br>
+  <input type="submit" value="<%= button_name %>" >
+</form>

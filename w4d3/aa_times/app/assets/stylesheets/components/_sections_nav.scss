@@ -1,0 +1,19 @@
+.section-nav{
+  border-bottom: 1px solid $light-gray;
+  padding: 15px;
+}
+
+.section-nav ul{
+  display: flex;
+  justify-content: center;
+}
+
+.section-nav li{
+  margin-left: 15px;
+  font-size: 11px;
+}
+
+.section-nav li:hover{
+  text-decoration: underline;
+  background-color: $light-gray
+}

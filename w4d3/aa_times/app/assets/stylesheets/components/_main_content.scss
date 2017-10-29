@@ -1,0 +1,120 @@
+@media all and (max-width: 1000px) {
+  .left-content{
+    flex-direction: column-reverse;
+  }
+}
+
+.video-wrapper {
+   position:relative;
+   width:100%;
+   height:0;
+   padding-bottom:56%;
+}
+
+.video-wrapper .video {
+   position:absolute;
+   left:0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+}
+
+.thumbnail{
+  margin: 5px 0;
+  width: 100%;
+  height: 80px;
+}
+
+.thumbnail img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.by-line{
+  color: $gray;
+  font-size: 13px;
+  padding: 5px 0;
+}
+
+
+.article-bullets{
+  list-style: disc;
+  margin-left: 15px;
+  margin-bottom: 10px;
+
+  li{
+    padding: 5px 0;
+  }
+}
+
+.comments {
+  color: $blue;
+}
+
+
+.comments:before{
+  content: '';
+  background-color: #326891;
+  height: 4px;
+  width: 7px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+
+figcaption{
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+.section-title{
+  text-align: center;
+}
+
+.subsection-title{
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.article-list{
+  margin-top: 5px;
+  list-style: disc inside;
+
+  li{
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 0;
+  }
+
+  div{
+    display: inline;
+    margin-left: -12px;
+  }
+}
+
+.signup-bar{
+  margin: 10px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.signup-bar{
+  .lg-input{
+    flex: 6;
+  }
+
+  button{
+    flex: 1;
+    border-radius: 0px 3px 3px 0px;
+  }
+}
+
+.lg-input{
+  border: 1px solid $blue;
+  font-size: 13px;
+  padding: 5px 10px;
+}

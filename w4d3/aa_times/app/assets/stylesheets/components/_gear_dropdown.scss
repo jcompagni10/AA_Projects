@@ -1,0 +1,61 @@
+
+.gear-dropdown-menu{
+  position: relative;
+}
+
+#gear-dropdown{
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 2px #ccc;
+  width: 195px;
+  position: absolute;
+  left: -200px;
+  top: 26px;
+  z-index: 99;
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: $sans-serif;
+  color: $gray;
+
+  .editions{
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 10px;
+  }
+
+  .dropdown-subtitle{
+    font-weight: 700;
+    padding: 5px 5px;
+
+  }
+
+  ul{
+  padding-top: 5px;
+  }
+
+  .editions li,
+  .help li{
+    padding: 5px 5px;
+  }
+
+  .editions li:first-of-type,
+  .help li:first-of-type{
+    margin-top: 5px;
+  }
+
+  .help{
+    color: $blue;
+  }
+
+  .help li:hover{
+    color: $dark-blue;
+    text-decoration: underline;
+  }
+  .editions li:hover{
+    background-color: $lightest-gray;
+    color: #000;
+  }
+
+}
+
+#gear-dropdown.hidden{
+  display: none;
+}
