@@ -1,0 +1,18 @@
+<section class="info-page">
+  <section class="data">
+    <h1> <%= @album.title %> </h1>
+    <strong>band:</strong> <%= @album.band_name %><br>
+    <strong>yr:</strong> <%= @album.yr %><br>
+    <strong>live:</strong> <%= @album.is_live %><br>
+
+    <h2> Tracks </h2>
+      <ul>
+      <%@album.tracks.each do |track| %>
+        <li> <%= link_to track.title, track_url(track) %> </li>
+      <% end %>
+  </section>
+  <section class="buttons">
+    <%= button_to "Edit Album", edit_album_url(@album), method: :get, class: "option-button" %>
+    <%= button_to "Delete Album", album_url(@album), method: :delete, class: "option-button" %>
+  </section>
+</section>

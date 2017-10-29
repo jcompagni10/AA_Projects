@@ -1,0 +1,18 @@
+<form class="" action="<%= action %>" method="post">
+  <!-- <label for="username">Username</label> -->
+
+  <input id="username" type="text" name="user[username]" placeholder="username" value="">
+
+  <input type="password" name="user[password]" placeholder="password" value="">
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <input type="submit" name="" value="Enter!">
+  <br>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <%= error %>
+    <br>
+    <% end %>
+  <% end %>
+</form>

@@ -1,0 +1,58 @@
+body{
+background-color: #fff;
+background: url('https://orig00.deviantart.net/32ae/f/2010/224/9/6/red_hex_by_zshock.jpg');
+}
+
+a{
+  text-decoration: none;
+  color: red;
+}
+.content{
+  max-width: 900px;
+  min-height: 800px;
+  background-color: #eee;
+  margin: 50px auto;
+  background: url('http://www.twitrcovers.com/wp-content/uploads/2013/12/Music-Record-Vinyl-l.jpg');
+  background-size: cover;
+  box-shadow: 3px 3px 10px -1px #000;
+  border-radius: 20px;
+}
+
+.main-content{
+  padding: 50px;
+}
+
+input[type=submit]{
+  background-color: $purple;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Bangers', cursive;
+  border: 1px solid rgb(100, 0, 0 );
+  padding: 5px;
+}
+
+input[type=submit]:hover{
+  background-color: $dark-purple;
+}
+
+.info-page{
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  color: bisque;
+  font-size: 20px;
+
+  .buttons{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.data{
+
+  ul{
+    text-align: left;
+    list-style: none;
+  }
+}

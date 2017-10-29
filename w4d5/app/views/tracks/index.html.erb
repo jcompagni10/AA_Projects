@@ -1,0 +1,7 @@
+<ul class="track-list">
+  <% @tracks.each do |track| %>
+    <li><h2> <%= track.title %> by <i><%= track.band_name %></i></h2></li>
+  <% end %>
+</ul>
+
+<%= button_to "Create New Track", new_track_url, method: :get %>

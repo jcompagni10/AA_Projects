@@ -1,0 +1,7 @@
+<ul class="album-list">
+  <% @albums.each do |album| %>
+    <li><h2> <%= album.title %> by <i><%= album.band_name %></i></h2></li>
+  <% end %>
+</ul>
+
+<%= button_to "Create New Album", new_album_url, method: :get %>
