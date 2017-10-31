@@ -1,0 +1,41 @@
+/* PHASE 1: Header */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+
+
+header {
+  display: flex;
+  background-color: red;
+  justify-content: space-between;
+  padding: 0px 60px;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title {
+  padding: 10px;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+}
+
+li {
+  padding:  0px 10px;
+  border-right: 1px solid white;
+}
+li:first-of-type {
+    border-left: 1px solid white;
+}
+
+li:hover {
+  background-color: black;
+}
