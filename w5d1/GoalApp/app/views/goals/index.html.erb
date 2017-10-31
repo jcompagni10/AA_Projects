@@ -1,0 +1,6 @@
+user goal page
+<% @goals.each do |g| %>
+  <% if g.public || g.user == current_user  %>
+    <%= g.title %> completed: <%= g.completed %>
+  <% end %>
+<% end %>
