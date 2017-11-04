@@ -1,0 +1,38 @@
+/* PHASE 6: Sidebar */
+
+.profile-picture {
+  display: block;
+  border: 1px solid black;
+  margin-top: -120px;
+  position: relative;
+  /*maybe it provides automatic z-index, it was placed on top just by position*/
+
+
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.profile-nav ul{
+  margin: 20px 0px;
+}
+.profile-nav ul li {
+  font-weight: bold;
+  border-top: 1px solid #ccc;
+  padding: 5px 0px 5px 5px;
+}
+
+.profile-nav ul li:hover{
+  background-color: #eee;
+  cursor: pointer;
+}
+
+
+
+.profile-nav ul li:last-child{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
