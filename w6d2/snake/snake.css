@@ -1,0 +1,13 @@
+
+.grid{
+  width: 500px;
+  height: 500px;
+  list-style: none;
+}
+.tile{
+  width: 10px;
+  height: 10px;
+  border: 1px solid green;
+  box-sizing: border-box;
+  float:left;
+}
