@@ -5,6 +5,10 @@ class Board{
     this.snake = new Snake();
     this.grid = [];
   }
+  
+  snakeCords(){
+    return this.snake.segments
+  }
 }
 
 module.exports = Board;

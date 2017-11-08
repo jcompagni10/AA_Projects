@@ -5,4 +5,5 @@ $(() =>{
   // const board = new Board();
   const view = new View(el);
   view.buildGrid();
+  view.render();
 })

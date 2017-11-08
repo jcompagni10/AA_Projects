@@ -11,3 +11,7 @@
   box-sizing: border-box;
   float:left;
 }
+
+.snake{
+  background-color: black;
+}
