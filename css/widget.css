@@ -1,0 +1,62 @@
+.clock-content{
+  width: 600px;
+  border: 1px solid #000;
+  background-color: orange;
+  font-size: 35px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clock-labels{
+  float: left;
+}
+.clock-data{
+  float: right;
+}
+
+.tabs {
+  margin-top: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+.tabs ul {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.tabs ul li {
+  border: 2px solid black;
+  border-right: none;
+  width: 100%;
+  background-color: #16f7f3;
+  border-radius: 10px 10px 0 0;
+}
+
+.tabs ul li:hover {
+  background-color: black;
+  color: white;
+}
+
+.tabs ul li:last-of-type {
+  border-right: 2px solid black;
+}
+
+.tabs ul li.selected {
+  border-bottom: none;
+}
+
+.tabs article {
+  border: 2px solid black;
+  border-top: none;
+  background-color: #16f7f3;
+  padding: 50px 20px;
+}
