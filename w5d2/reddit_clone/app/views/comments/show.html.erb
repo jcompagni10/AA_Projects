@@ -1,0 +1,5 @@
+<h1> Comment Page </h1>
+
+<%= render "comment", comment: @comment, coms: all_comments(@comment.post) %>
+<h2> Reply </h2>
+<%= render "comment_form", post: @comment.post, parent_id: @comment.id %>

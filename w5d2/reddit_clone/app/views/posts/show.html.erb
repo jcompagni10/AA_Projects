@@ -1,0 +1,26 @@
+<h1><%= @post.title %></h1>
+<%= @post.url %>
+<%= @post.content %>
+<%= @post.author.username %>
+
+ posted in:
+  <ul>
+<% @post.subs.each do |sub| %>
+  <li><%= sub.title %></li>
+<% end %>
+</ul>
+<% if @post.author == current_user %>
+  <%= link_to "Edit Post", edit_post_url(@post) %>
+<% end %>
+<section class="subreplies">
+  <% ac = all_comments %>
+  <% ac.each do |comment| %>
+    <% next unless comment.parent_id.nil? %>
+    <%= render "comments/comment", comment: comment, coms: ac %>
+  <% end %>
+</section>
+
+<h2> Add Comment </h2>
+<section class="post-response">
+  <%= render "comments/comment_form", post: @post, parent_id: nil%>
+</section>

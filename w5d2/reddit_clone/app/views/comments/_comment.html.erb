@@ -1,0 +1,12 @@
+<section class="comment">
+  <%= comment.content %> <br>
+  -<%= comment.author.username %> <br>
+  <%= comment.created_at %> <br>
+  <%= link_to "Reply", comment_url(comment) %>
+  <section class="subreplies">
+    <% coms.each do |c| %>
+      <% next unless c.parent_id == comment.id %>
+      <%= render "comments/comment", comment: c, coms: coms %>
+    <% end %>
+  </section>
+</section>

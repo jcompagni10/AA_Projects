@@ -1,0 +1,15 @@
+<%= link_to "All Subs", subs_url %>
+<h1><%= @sub.title %></h1>
+<h3 class="sub-description"><%= @sub.description %></h3>
+
+
+<h2> POSTS </h2>
+
+<% @sub.posts.where(parent_id: nil).each do |post| %>
+  <%= render "post", post:post %>
+<% end %>
+
+
+<% if @sub.moderator == current_user %>
+  <%= link_to "Edit Sub", edit_sub_url(@sub) %>
+<% end %>
