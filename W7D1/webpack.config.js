@@ -1,7 +1,8 @@
+// webpack.config.js
 var path = require('path');
 
 module.exports = {
-  entry: './front_end/widgets.jsx',
+  entry: './frontend/todo_redux.jsx',
   output: {
     filename: './bundle.js',
   },
