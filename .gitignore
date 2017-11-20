@@ -1,4 +1,7 @@
 node_modules/
 bundle.js
 bundle.js.map
+<<<<<<< HEAD
 .DS_Store
+=======
+>>>>>>> 7c0e751a2e0fab6b64dc339f841777010215a9ef
