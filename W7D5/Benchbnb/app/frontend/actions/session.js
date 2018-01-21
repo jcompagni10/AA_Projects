@@ -27,7 +27,7 @@ export const logout = () => dispatch => (
 );
 
 export const signupUser = formUser => dispatch => (
-  APIUtil.postUser(formUser)
+   APIUtil.postUser(formUser)
     .then(user => dispatch(receiveCurrentUser(user)),
     errors => dispatch(receiveErrors(errors.responseJSON)))
 );
