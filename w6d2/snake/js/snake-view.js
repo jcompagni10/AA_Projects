@@ -1,8 +1,8 @@
 const Board = require("./board.js");
 
 class View{
-  constructor(el){
-    this.el = el;
+  constructor(root){
+    this.root = root;
     this.board = new Board();
     this.addKeyListener();
     this.interval = window.setInterval(this.step.bind(this), 75);
